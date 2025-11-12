@@ -9,8 +9,8 @@
     Autonomous Vehicles Semantic Segmentation with Uncertainty Calibration
   </div>
   <div style="display:flex; align-items:center; justify-content:center; gap:36px; margin-top:8px;">
-    <img src="data/assets/ifn_logo.png" alt="IfN Logo" style="height:140px; object-fit:contain;" />
-    <img src="data/assets/tu_bs_logo.svg.png" alt="TU Braunschweig Logo" style="height:120px; object-fit:contain;" />
+    <img src="assets/logo_IFN.svg" alt="IfN Logo" style="height:140px; object-fit:contain;" />
+    <img src="assets/tu_braunschweig_logo.svg" alt="TU Braunschweig Logo" style="height:120px; object-fit:contain;" />
   </div>
 </div>
 
