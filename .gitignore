@@ -1,0 +1,191 @@
+# =========================
+# OS — macOS
+# =========================
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+.Spotlight-V100
+.Trashes
+.fseventsd
+.TemporaryItems
+.apdisk
+*.icloud
+
+# =========================
+# OS — Windows
+# =========================
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+*.pt
+
+
+#GitLab ssh key: ssh chakraborti@134.169.30.85
+# =========================
+# OS — Linux
+# =========================
+*~
+.fuse_hidden*
+.nfs*
+
+# =========================
+# Editors & IDEs
+# =========================
+# VS Code (keep common project files if you want)
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/tasks.json
+!.vscode/launch.json
+# JetBrains / PyCharm
+.idea/
+*.iml
+# Others
+*.code-workspace
+*.sublime-*
+.vim/
+*.swp
+*.swo
+
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.python-version
+
+# Virtual envs
+.venv/
+venv/
+env/
+env.*/
+.conda/
+conda-meta/
+
+# Packaging / builds
+build/
+build*/
+dist/
+develop-eggs/
+.eggs/
+parts/
+var/
+sdist/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Tool caches
+.pytest_cache/
+.mypy_cache/
+.pytype/
+.pyre/
+.nox/
+.tox/
+.hypothesis/
+.dmypy.json
+dmypy.json
+.ruff_cache/
+
+# Coverage / test outputs
+.coverage
+.coverage.*
+.cache/
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+htmlcov/
+credentials.txt
+tasks.md 
+data/cityscapes/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# =========================
+# Data science / ML artifacts
+# =========================
+# Common experiment outputs (uncomment lines you need to keep)
+runs/
+lightning_logs/
+wandb/
+mlruns/
+tensorboard/
+tb_logs/
+checkpoints/
+*.ckpt
+*.pth
+*.onnx
+*.npz
+*.npy
+*.h5
+*.hdf5
+
+# =========================
+# Logs & temps
+# =========================
+*.log
+*.tmp
+*.temp
+*.bak
+*.orig
+*.rej
+.vscode
+
+# =========================
+# C/C++/CUDA builds (if present)
+# =========================
+*.o
+*.obj
+*.lo
+*.la
+*.al
+*.pyd
+*.dll
+*.dylib
+*.lib
+*.exp
+*.idb
+*.pdb
+*.mod
+CMakeFiles/
+CMakeCache.txt
+Makefile
+cmake-build-*/
+
+# =========================
+# Node (if present)
+# =========================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# =========================
+# Env / secrets (adjust to your policy)
+# =========================
+.env
+.env.*
+*.env
+*.pem
+*.key
+*.crt
+*.pt
+secrets.*.yml
+
+
+weights/

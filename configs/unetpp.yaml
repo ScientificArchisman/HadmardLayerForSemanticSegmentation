@@ -1,0 +1,6 @@
+encoder_name: "resnet34" # Name of the classification model that will be used as an encoder (a.k.a backbone) to extract features of different spatial resolution
+encoder_depth: 5 # A number of stages used in encoder in range [3, 5]. Each stage generate features two times smaller in spatial dimensions than previous one (e.g. for depth 0 we will have features with shapes [(N, C, H, W),], for depth 1 - [(N, C, H, W), (N, C, H // 2, W // 2)] and so on). Default is 5
+encoder_weights: "imagenet" # One of None (random initialization), “imagenet” (pre-training on ImageNet) and other pretrained weights (see table with available weights for each encoder_name)
+decoder_channels: [256, 128, 64, 32, 16] # A list of channels for each decoder stage. The length of this list should be equal to encoder_depth. Default is [256, 128, 64, 32, 16]
+decoder_attention_type: "scse" # Type of attention mechanism to use in the decoder. Options are "scse", "cbam", "none". Default is "scse"
+activation: "identity" #  An activation function to apply after the final convolution layer. Available options are “sigmoid”, “softmax”, “logsoftmax”, “tanh”, “identity”, callable and None. Default is None.

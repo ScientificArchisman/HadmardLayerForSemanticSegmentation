@@ -1,0 +1,70 @@
+# Global settings for the project
+experiment_name: "Experiment_ResNet50_H_Multistep" # Name of the experiment
+log_dir: "logs" # Directory to store logs
+
+# PYTORCH HUB SETTINGS
+pytorch_hub:
+  weights_dir: "./weights"
+
+cityscapes:
+  data_dir: "data/cityscapes" # Directory to store Cityscapes data
+  mode : "fine" # Mode of the Cityscapes dataset, can be "fine" or "coarse"
+  target_type: "semantic" # Target type for Cityscapes dataset, can be "semantic", "instance", "color", or "polygon"
+  num_channels: 3
+  valid_classes: [7, 8, 11, 12, 13, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 31, 32, 33] # Valid classes for the Cityscapes dataset
+  ignore_index: 255 # Index to ignore in the Cityscapes dataset
+  output_hw : [640, 1152] # Output height and width of the Cityscapes dataset
+  mean: [0.3257, 0.3690, 0.3223]
+  std: [0.2112, 0.2148, 0.2115]
+
+
+train_loader:
+  batch_size: 4 # Batch size for training
+  num_workers: 1 # Number of workers for data loading
+  shuffle: True # Whether to shuffle the training data
+  pin_memory: False # Whether to use pinned memory for data loading
+
+val_loader:
+  batch_size: 5 # Batch size for val
+  num_workers: 1 # Number of workers for data loading
+  shuffle: True # Whether to shuffle the training data
+  pin_memory: False # Whether to use pinned memory for data loading
+
+test_loader:
+  batch_size: 2 # Batch size for testing
+  num_workers: 1 # Number of workers for data loading
+  shuffle: False # Whether to shuffle the training data
+  pin_memory: True # Whether to use pinned memory for data loading
+
+
+training:
+  epochs: 100 # Number of epochs to train for
+  weights_dir : "./weights" # Directory to store model weights
+
+  optimizer: 
+    type: "sgd" # Type of optimizer to use, can be "adamw", "sgd"
+    lr : 0.003 # Learning rate for the optimizer
+    weight_decay: 0.00001 # Weight decay for the optimizer
+
+  loss:
+    lambda_ce: 3 # Weight for the cross-entropy loss
+    lambda_dice: 40 # Weight for the dice loss
+    lambda_l1: 0.8 # Weight for the L1 loss
+
+  scheduler:
+    type: "multistep" # Type of scheduler to use, can be "cosine", "step", "multistep", "poly", "cyclic"
+    T_max: 50 # Maximum number of iterations for the cosine scheduler
+    step_size: 30 # Step size for the step scheduler
+    gamma: 0.1 # Gamma for the step and multistep schedulers
+    milestones: [30, 60, 90] # Milestones for the multistep scheduler
+
+
+calibration:
+  training:
+    epochs: 5 # Number of epochs to train the calibration model
+    lambda_smooth: 0.001 # Weight for the smoothing loss
+
+  optimizer:
+    type: "adamw" # Type of optimizer to use, can be "adamw", "sgd"
+    lr: 0.001 # Learning rate for the optimizer
+    weight_decay: 0.0001 # Weight decay for the optimizer
